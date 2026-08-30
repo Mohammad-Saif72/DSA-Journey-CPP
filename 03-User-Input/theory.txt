@@ -1,0 +1,357 @@
+🚀 Day 3 — C++ User Input with std::cin
+
+Great. Today we move from printing fixed information to making your programs interactive.
+
+And I'll follow exactly the learning style you requested:
+
+Theory → Examples → Practice → You try → Solutions at the end
+
+Don't jump to the solutions section until you've attempted the exercises.
+
+1. What did we do before?
+
+Your previous programs looked like:
+
+#include <iostream>
+
+
+int main()
+{
+    int age = 24;
+
+
+    std::cout << "Age: " << age << "\n";
+
+
+    return 0;
+}
+
+The value 24 was already inside the program.
+
+So:
+
+Program
+   ↓
+24
+   ↓
+Output
+
+But real programs need to accept information from the user.
+
+For example:
+
+Enter your age: 24
+Your age is: 24
+
+Now the flow becomes:
+
+          User
+           ↓
+        Input
+           ↓
+        Program
+           ↓
+        Processing
+           ↓
+         Output
+2. std::cin
+
+C++ provides:
+
+std::cin
+
+for taking input from the keyboard.
+
+Think of:
+
+std::cout
+
+as:
+
+C++ → Screen
+
+and:
+
+std::cin
+
+as:
+
+Keyboard → C++
+
+3. Basic syntax
+
+Suppose we have:
+
+int age;
+
+We can take input:
+
+std::cin >> age;
+
+Notice something important:
+
+Output
+std::cout << age;
+
+uses:
+
+<<
+Input
+std::cin >> age;
+
+uses:
+
+>>
+
+You can remember:
+
+cout → <<
+cin  → >>
+4. First interactive program
+
+Here is a small example.
+
+#include <iostream>
+
+
+int main()
+{
+    int age;
+
+
+    std::cout << "Enter your age: ";
+    std::cin >> age;
+
+
+    std::cout << "Your age is: " << age << "\n";
+
+
+    return 0;
+}
+
+Suppose you run it:
+
+Enter your age: 24
+Your age is: 24
+
+Notice that we didn't write:
+
+int age = 24;
+
+Instead:
+
+int age;
+
+creates the variable.
+
+Then:
+
+std::cin >> age;
+
+gets the value from the user.
+
+5. Declaration vs initialization vs input
+
+This distinction is important.
+
+Declaration
+int age;
+
+You're saying:
+
+Create an integer variable called age.
+
+Initialization
+int age = 24;
+
+You're saying:
+
+Create age and initially give it the value 24.
+
+User input
+std::cin >> age;
+
+You're saying:
+
+Take a value from the user and put it into age.
+
+So:
+
+int age;
+
+
+std::cin >> age;
+
+is a common pattern.
+
+6. Taking different types of input
+Integer
+int age;
+
+
+std::cin >> age;
+
+User:
+
+24
+Decimal
+double cgpa;
+
+
+std::cin >> cgpa;
+
+User:
+
+7.3
+Character
+char grade;
+
+
+std::cin >> grade;
+
+User:
+
+A
+String
+#include <string>
+
+
+std::string name;
+
+
+std::cin >> name;
+
+User:
+
+Saif
+7. Important: std::cin and spaces
+
+This is something you should understand early.
+
+Suppose:
+
+std::string name;
+
+
+std::cin >> name;
+
+You enter:
+
+Saif Ansari
+
+std::cin >> name will generally read only:
+
+Saif
+
+Why?
+
+Because operator>> for std::string stops at whitespace.
+
+So:
+
+Saif Ansari
+    ↑
+space
+
+causes the input to be separated.
+
+We'll learn std::getline() later for complete lines.
+
+For today, use single-word strings with std::cin.
+
+8. Multiple inputs
+
+You can take multiple values:
+
+int age;
+double cgpa;
+
+
+std::cin >> age;
+std::cin >> cgpa;
+
+Or:
+
+std::cin >> age >> cgpa;
+
+For example:
+
+#include <iostream>
+
+
+int main()
+{
+    int age;
+    double cgpa;
+
+
+    std::cout << "Enter age and CGPA: ";
+
+
+    std::cin >> age >> cgpa;
+
+
+    std::cout << "Age: " << age << "\n";
+    std::cout << "CGPA: " << cgpa << "\n";
+
+
+    return 0;
+}
+
+You could enter:
+
+24 7.3
+
+and get:
+
+Age: 24
+CGPA: 7.3
+9. std::cout + std::cin
+
+A very common pattern is:
+
+std::cout << "Enter something: ";
+std::cin >> something;
+
+This should become familiar to you.
+
+For example:
+
+int number;
+
+
+std::cout << "Enter a number: ";
+std::cin >> number;
+
+
+std::cout << "You entered: " << number;
+10. Input and calculations
+
+Now we can make the program actually useful.
+
+Suppose:
+
+int a;
+int b;
+
+Take both from the user:
+
+std::cin >> a >> b;
+
+Then calculate:
+
+int sum = a + b;
+
+and print:
+
+std::cout << "Sum: " << sum;
+
+The complete flow is:
+
+User enters a
+      ↓
+User enters b
+      ↓
+Program calculates a + b
+      ↓
+Program prints result

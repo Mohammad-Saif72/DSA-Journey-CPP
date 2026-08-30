@@ -1,0 +1,192 @@
+DAY 1 — C++ Program Structure & Output
+1. What is C++?
+
+C++ is a programming language used for:
+
+Software development
+Competitive programming
+Operating systems
+Game development
+Embedded systems
+Robotics
+High-performance applications
+AI/ML systems
+
+For your M.Tech CSE, C++ is especially useful for DSA, algorithms, competitive programming, systems programming, and interviews.
+
+2. How does a C++ program work?
+
+You write:
+
+C++ Source Code
+       ↓
+    Compiler
+       ↓
+ Machine Code
+       ↓
+     CPU
+       ↓
+    Output
+
+For example:
+
+std::cout << "Hello";
+
+The compiler converts your C++ code into machine-readable instructions.
+
+3. Basic structure of a C++ program
+
+The smallest useful program is:
+
+#include <iostream>
+
+
+int main()
+{
+    // Your code goes here
+
+
+    return 0;
+}
+
+Don't memorize it blindly. Understand each part.
+
+#include <iostream>
+
+iostream stands for input/output stream.
+
+It provides functionality such as:
+
+std::cout
+std::cin
+
+You'll learn cin later.
+
+int main()
+
+main() is where program execution begins.
+
+Think:
+
+Program starts
+     ↓
+  main()
+     ↓
+your statements
+     ↓
+Program ends
+
+int means the function returns an integer.
+
+We'll study functions properly later.
+
+{ }
+
+These curly brackets define a block of code.
+
+int main()
+{
+    // inside main
+}
+
+Everything between { and } belongs to main().
+
+return 0;
+
+For now, remember:
+
+return 0;
+
+means the program finished successfully.
+
+We'll understand return more deeply when we study functions.
+
+4. std::cout
+
+cout is used to display output.
+
+Example:
+
+std::cout << "Hello";
+
+Output:
+
+Hello
+
+The std:: means that cout belongs to the C++ standard library namespace.
+
+For now, always write std::cout.
+
+Don't worry about using namespace std; yet.
+
+5. Printing text
+
+Text must be inside quotation marks:
+
+std::cout << "Hello";
+
+Correct:
+
+"Hello"
+
+Incorrect:
+
+Hello
+
+because C++ would interpret Hello as something other than a text literal.
+
+6. New line
+
+You can use:
+
+\n
+
+Example:
+
+std::cout << "Hello\n";
+std::cout << "Saif";
+
+Output:
+
+Hello
+Saif
+
+You can also use:
+
+std::endl
+
+Example:
+
+std::cout << "Hello" << std::endl;
+std::cout << "Saif";
+
+For now, understand both.
+
+7. Combining output
+
+You can write:
+
+std::cout << "Name: " << "Saif";
+
+Output:
+
+Name: Saif
+
+The << allows you to send multiple things to cout.
+
+For example:
+
+std::cout << "Name: " << "Saif" << "\n";
+8. Comments
+
+Comments are notes for humans.
+
+Single-line
+// This is a comment
+Multiple-line
+/*
+   This is
+   a multi-line comment
+*/
+
+The compiler ignores comments.
